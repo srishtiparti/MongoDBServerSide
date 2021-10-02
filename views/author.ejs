@@ -1,0 +1,22 @@
+<!-- Creating author page to show About Us -->
+<!-- including the head of html -->
+<%- include('layouts/head');-%>
+<body>
+    <!-- including header -->
+  <%- include('layouts/header');-%>
+  <%- include('layouts/nav');-%>
+  <!-- table to print student's name and ID -->
+  <table>
+      <tr>
+          <td>Student Name :</td>
+          <td><%= name %></td>
+      </tr>
+      <tr>
+          <td>Student ID :</td>
+          <td><%= studentID %></td>
+      </tr>
+  </table>>
+</section>
+<div class="clear"></div>
+</body>
+<%- include('layouts/foot');-%>

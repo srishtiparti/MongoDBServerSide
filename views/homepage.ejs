@@ -1,0 +1,71 @@
+<!-- including the head -->
+<%- include('_layouts/head');-%>
+
+	<body>
+		<!-- including the header of the body -->
+		<%- include('_layouts/header');-%>
+			<!-- creating nav bar -->
+			<%- include('_layouts/nav');-%>
+				<main>
+					<!-- creating form to get information of the user-->
+					<form action="receipt" method="Post">
+						<!-- getting information such as name, address, city, province, phone number, email from the user -->
+						<label>Name</label>
+						<input id="name" placeholder="First Last" type="text" name="name"><br />
+
+						<label>Email</label>
+						<input id="email" placeholder="email@domain.com" type="text" name="email"><br />
+
+						<label>Phone</label>
+						<input id="phone" placeholder="123-123-1234" type="phone" name="phone"><br />
+
+						<label>Address</label>
+						<input id="address" placeholder="122 xxxx street" name="address"><br />
+
+						<label>City</label>
+						<input id="city" placeholder="eg- Toronto" type="city" name="city"><br />
+
+						<label>Province</label>
+						<select name="province" id="province">
+							<option value="">----- Select -----</option>
+							<option value="Ontario">Ontario</option>
+							<option value="British Columbia">British Columbia</option>
+							<option value="Alberta">Alberta</option>
+							<option value="Manitoba">Manitoba</option>
+							<option value="New Brunswick">New Brunswick</option>
+							<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+							<option value="Northwest Territories">Northwest Territories</option>
+							<option value="Nova Scotia">Nova Scotia</option>
+							<option value="Nunavut">Nunavut</option>
+							<option value="Prince Edward Island">Prince Edward Island</option>
+							<option value="Quebec">Quebec</option>
+							<option value="Saskatchewan">Saskatchewan</option>
+							<option value="Yukon">Yukon</option>
+						</select>
+
+						<!-- listing all the items that user can buy -->
+						<label>Orchid ($6)</label>
+						<input id="orchid" placeholder="quantity" name="orchid" value="0"><br />
+
+						<label>Rose ($5)</label>
+						<input id="rose" placeholder="quantity" name="rose" value="0"><br />
+
+						<label>Lily ($4)</label>
+						<input id="lily" placeholder="quantity" name="lily" value="0"><br />
+
+						<label>Lavender ($3)</label>
+						<input id="lavender" placeholder="quantity" name="lavender" value="0"><br />
+
+						<input type="submit" value="Submit">
+
+						<!-- printing all the errors over here -->
+						<% if(typeof(errors) !='undefined' ){ for(var error of errors){ %>
+							<p class="errors">
+								<%= error.msg%>
+							</p>
+							<% } } %>
+					</form>
+				</main>
+	</body>
+	<!-- including the footer of the html -->
+	<%- include('_layouts/foot');-%>

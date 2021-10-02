@@ -1,0 +1,46 @@
+<!-- printing the receipt -->
+<!-- including the head of html -->
+<%- include('_layouts/head');-%>
+
+    <body>
+        <!-- includer the header section of body -->
+        <%- include('_layouts/header');-%>
+            <!-- including the navigation bar -->
+            <%- include('_layouts/nav');-%>
+                <section>
+                    <table>
+                        <tr>
+                            <td id="title" colspan="2">Your Recipt</td>
+                        </tr>
+                        <tr>
+                            <!-- printing name of user -->
+                            <th>Name:</th>
+                            <td>
+                                <%= name%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- printing email of the user -->
+                            <th>Email:</th>
+                            <td>
+                                <%= email%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- printing phone number of the user -->
+                            <th>Phone Number:</th>
+                            <td>
+                                <%= phone%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- including the item receipt -->
+                                <%- include('layouts/itemReceipt');-%>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+    </body>
+    <!-- including the footer of the html -->
+    <%- include('layouts/foot');-%>

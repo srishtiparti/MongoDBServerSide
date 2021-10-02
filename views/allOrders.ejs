@@ -1,0 +1,111 @@
+<!-- Creating an all orders page to show All orders -->
+<!-- including the head -->
+<%- include('layouts/head');-%>
+
+	<body>
+		<!-- including the header of the body -->
+		<%- include('layouts/header');-%>
+			<!-- creating nav bar -->
+			<%- include('layouts/nav');-%>
+            <section>
+                <!-- creating a table to collect all data from the database -->
+                <table class="allOrderTable">
+                    <thead>
+                        <!-- headings of the table -->
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Province</th>
+                        <th>Rose Quantity</th>
+                        <th>Rose Cost</th>
+                        <th>Orchid Quantity</th>
+                        <th>Orchid Cost</th>
+                        <th>Lily Quantity</th>
+                        <th>Lily Cost</th>
+                        <th>Lavender Quantity</th>
+                        <th>Lavender Cost</th>
+                        <th>Subtotal</th>
+                        <th>Tax</th>
+                        <th>Total</th>
+                    </thead>
+                    <tbody>
+                        <!-- loop to add all the pastorders -->
+                        <% for(var order of orders){%>
+                            <tr>
+                                <!-- adding customer's name -->
+                                <td>
+                                    <%=order.name %>
+                                </td>
+                                <!-- adding customer's email -->
+                                <td>
+                                    <%=order.email %>
+                                </td>
+                                <!-- adding customer's phone number -->
+                                <td>
+                                    <%=order.phone %>
+                                </td>
+                                <!-- adding customer's address -->
+                                <td>
+                                    <%=order.address %>
+                                </td>
+                                <!-- adding customer's city -->
+                                <td>
+                                    <%=order.city %>
+                                </td>
+                                <!-- adding customer's province -->
+                                <td>
+                                    <%=order.province %>
+                                </td>
+                                <!-- adding rose quantity -->
+                                <td>
+                                    <%=order.rose %>
+                                </td>
+                                <!-- adding rose's cost -->
+                                <td>
+                                    <%=order.roseCost %>
+                                </td>
+                                <!-- adding orchid's quantity -->
+                                <td>
+                                    <%=order.orchid %>
+                                </td>
+                                <!-- adding orchid's cost -->
+                                <td>
+                                    <%=order.orchidCost %>
+                                </td>
+                                <!-- adding lily's quantity -->
+                                <td>
+                                    <%=order.lily %>
+                                </td>
+                                <!-- adding lily's cost -->
+                                <td>
+                                    <%=order.lilyCost %>
+                                </td>
+                                <!-- adding lavender's quantity -->
+                                <td>
+                                    <%=order.lavender%>
+                                </td>
+                                <!-- adding lavender's cost -->
+                                <td>
+                                    <%=order.lavenderCost %>
+                                </td>
+                                <!-- printing subtotal -->
+                                <td>
+                                    <%=order.subtotal.toFixed(2) %>
+                                </td>
+                                <!-- the tax amount-->
+                                <td>
+                                    <%=order.tax.toFixed(2) %>
+                                </td>
+                                <!-- the total amount of the order-->
+                                <td>
+                                    <%=order.total.toFixed(2) %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                    </table>
+            </section>
+    </body>
+    <%- include('layouts/foot');-%>
